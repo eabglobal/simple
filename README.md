@@ -34,7 +34,9 @@ HeaderValue=*
 Code=200
 ```
 
-These endpoints are accessible through GET requests at `localhost:9080/failure` and `localhost:9080/success` respectively.
+These endpoints are accessible at `localhost:9080/failure` and `localhost:9080/success` respectively.
+
+<img src="SimpleScreenShot.png">
 
 
 ## Copyright, author, and license
