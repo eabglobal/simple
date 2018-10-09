@@ -38,6 +38,8 @@ These endpoints are accessible at `localhost:9080/failure` and `localhost:9080/s
 
 <img src="SimpleScreenShot.png">
 
+Above is an example with first a GET and then a POST request.
+
 
 ## Copyright, author, and license
 Copyright 2018 EAB Global, Inc.
