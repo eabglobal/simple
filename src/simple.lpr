@@ -1,4 +1,4 @@
-program small;
+program simple;
 
 {
   Copyright    2018, EAB Global, Inc.
@@ -13,7 +13,7 @@ uses
   cmem, SysUtils, fphttpapp, httpdefs, httproute, IniFiles;
 
 CONST
-  SmallVersion = '0.2.1';
+  SimpleVersion = '0.2.1';
 
 var
   INI: TINIFile;
@@ -69,18 +69,18 @@ begin
   WriteLn('  ______ _____ _____  |  | |  |');
   WriteLn(' /  ___//     \\__  \ |  | |  |     Copyright EAB Global');
   WriteLn(' \___ \|  Y Y  \/ __ \|  |_|  |__   Author Marcus Fernstrom, on behalf of EAB Global, Inc.');
-  WriteLn('/____  >__|_|  (____  /____/____/   version ' + SmallVersion);
+  WriteLn('/____  >__|_|  (____  /____/____/   version ' + SimpleVersion);
   WriteLn('     \/      \/     \/');
 end;
 
 procedure displayHelp();
 begin
   WriteLn(' ');
-  WriteLn('Small is a utility to easily run a webserver that dumps out data sent to it, and optionally responds based on a simple INI file.');
-  WriteLn('Small was created by Marcus Fernstrom for EAB Global, Inc. in 2018');
-  WriteLn(format('Version %s', [SmallVersion]));
+  WriteLn('Simple is a utility to easily run a webserver that dumps out data sent to it, and optionally responds based on a simple INI file.');
+  WriteLn('Simple was created by Marcus Fernstrom for EAB Global, Inc. in 2018');
+  WriteLn(format('Version %s', [SimpleVersion]));
   WriteLn(' ');
-  WriteLn('Example small.ini');
+  WriteLn('Example simple.ini');
   WriteLn(' ');
   WriteLn('[myendpoint]');
   WriteLn('Content={"success":true}');
@@ -98,7 +98,7 @@ begin
 end;
 
 begin
-  INI := TINIFile.Create(Application.Location + 'small.ini');
+  INI := TINIFile.Create(Application.Location + 'simple.ini');
 
   // Parameters are either 'help' or a port number
   if Application.ParamCount > 0 then begin
@@ -115,6 +115,6 @@ begin
   HTTPRouter.RegisterRoute('/endpointManager', @endpointManager, true);
   Application.Threaded := true;
   Application.Initialize;
-  WriteLn(format('Small v.%s is ready at http://localhost:%d/', [SmallVersion, ApplicationPort]));
+  WriteLn(format('Simple v.%s is ready at http://localhost:%d/', [SimpleVersion, ApplicationPort]));
   Application.Run;
 end.
